@@ -24,25 +24,26 @@ namespace WindowsFormsApp
             if (e.GetType() == typeof(MouseEventArgs))
             {
                 MouseEventArgs me = e as MouseEventArgs;
-                textOutput.Text = me.Location.ToString();
+                //textOutput.Text = me.Location.ToString();
+                textOutput.AppendText(me.Location.ToString() + Environment.NewLine);
             }
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            Stream myStream;
+            Stream myStream; // handles saving and loading
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
-            saveFileDialog1.DefaultExt = "txt";            
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt"; // chooses the txt file dialog dropdown
+            saveFileDialog1.DefaultExt = "txt"; // forces the file to be saved as .txt even when not specified
          
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK) // if the dialog is open, then...
             {
                 if ((myStream = saveFileDialog1.OpenFile()) != null)
                 {
                     // Code to write the stream goes here.                    
                     StreamWriter sw = new StreamWriter(myStream);
-                    sw.WriteLine(textOutput.Text);
-                    sw.Flush();
+                    sw.WriteLine(textOutput.Text); // write text from the textbox textOutput
+                    sw.Flush(); // clears buffers for the current buffer, causes buffered data to be written to underlying stream
                     sw.Close();
                     myStream.Close();
                 }
