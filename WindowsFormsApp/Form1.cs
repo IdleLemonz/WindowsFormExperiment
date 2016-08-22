@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,14 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace WindowsFormsApp
-{
+{    
     public partial class Form1 : Form
     {
+        //List<string> locations = new List<string>();      
+        Data info = new Data();  
+
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }      
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -24,8 +27,13 @@ namespace WindowsFormsApp
             if (e.GetType() == typeof(MouseEventArgs))
             {
                 MouseEventArgs me = e as MouseEventArgs;
-                //textOutput.Text = me.Location.ToString();
-                textOutput.AppendText(me.Location.ToString() + Environment.NewLine);
+   
+                info.locations.Add(me.Location.ToString() + Environment.NewLine);
+                textOutput.Text = "";
+                foreach (string item in info.locations)
+                {
+                    textOutput.AppendText(item);
+                }
             }
         }
 
