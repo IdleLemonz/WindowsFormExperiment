@@ -49,5 +49,10 @@ namespace WindowsFormsApp
                 }
             }
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textOutput.Text = "";
+        }
     }
 }

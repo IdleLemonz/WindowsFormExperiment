@@ -31,6 +31,7 @@
             this.buttonExport = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textOutput = new System.Windows.Forms.TextBox();
+            this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +64,22 @@
             this.textOutput.Size = new System.Drawing.Size(156, 142);
             this.textOutput.TabIndex = 2;
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(327, 162);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.TabIndex = 3;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 262);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.textOutput);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonExport);
@@ -84,6 +96,7 @@
         private System.Windows.Forms.Button buttonExport;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textOutput;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 
