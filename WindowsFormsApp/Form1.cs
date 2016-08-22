@@ -62,5 +62,19 @@ namespace WindowsFormsApp
         {
             textOutput.Text = "";
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 newMDIChild = new Form2();
+            // Set the Parent Form of the Child window
+            newMDIChild.MdiParent = this;
+            // Display the new form
+            newMDIChild.Show();
+        }
     }
 }
